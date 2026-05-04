@@ -51,7 +51,7 @@ function Section({ id, className = '', children }: { id: string; className?: str
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="text-center mb-10">
-      <h2 className="text-2xl md:text-3xl font-bold text-[#8B6F47]">{title}</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">{title}</h2>
       {subtitle && <p className="mt-2 text-[#B8956A] text-sm md:text-base">{subtitle}</p>}
     </div>
   );
@@ -73,19 +73,23 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative">
-      {/* 배경 블러 글로우 */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-[#E3CFB4]/20 blur-[100px]" />
-        <div className="absolute top-[30%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-[#E3CFB4]/15 blur-[120px]" />
-        <div className="absolute bottom-[-5%] left-[20%] w-[30vw] h-[30vw] rounded-full bg-[#B8956A]/10 blur-[100px]" />
+    <div className="relative min-h-screen bg-gradient-to-br from-[#FAF4EA] via-white to-[#F5EADB]">
+      {/* 배경 글로우 — 예약 시스템과 동일 스타일 */}
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-[#E3CFB4]/50 blur-3xl" />
+        <div className="absolute top-40 -right-20 w-80 h-80 rounded-full bg-[#EADFCB]/60 blur-3xl" />
+        <div className="absolute bottom-40 left-10 w-72 h-72 rounded-full bg-[#E3CFB4]/40 blur-3xl" />
+        <div className="absolute top-[60%] right-[10%] w-64 h-64 rounded-full bg-[#EADFCB]/40 blur-3xl" />
       </div>
 
       {/* 네비게이션 */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-nav shadow-sm' : ''}`}>
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <button onClick={() => scrollTo('hero')} className="font-bold text-lg text-[#8B6F47]">
-            투스텝홀
+          <button onClick={() => scrollTo('hero')} className="flex items-center gap-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-symbol.png" alt="" className="h-7 w-auto" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-wordmark.png" alt="투스텝홀" className="h-4 w-auto" />
           </button>
 
           {/* 데스크탑 메뉴 */}
@@ -94,7 +98,7 @@ export default function HomePage() {
               <button
                 key={s.id}
                 onClick={() => scrollTo(s.id)}
-                className="text-sm text-[#8B6F47]/70 hover:text-[#8B6F47] transition-colors"
+                className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium"
               >
                 {s.label}
               </button>
@@ -114,12 +118,12 @@ export default function HomePage() {
 
         {/* 모바일 드롭다운 */}
         {navOpen && (
-          <div className="md:hidden glass-nav border-t border-[#E3CFB4]/20 px-4 py-3">
+          <div className="md:hidden glass-nav border-t border-white/40 px-4 py-3">
             {SECTIONS.slice(1).map((s) => (
               <button
                 key={s.id}
                 onClick={() => scrollTo(s.id)}
-                className="block w-full text-left py-2.5 text-sm text-[#8B6F47]/80 hover:text-[#8B6F47]"
+                className="block w-full text-left py-2.5 text-sm text-gray-500 hover:text-gray-900 font-medium"
               >
                 {s.label}
               </button>
@@ -129,20 +133,23 @@ export default function HomePage() {
       </nav>
 
       {/* 히어로 섹션 */}
-      <section id="hero" className="min-h-screen flex items-center justify-center px-4">
+      <section id="hero" className="min-h-screen flex items-start md:items-center justify-center px-4 pt-32 md:pt-0">
         <div className="text-center rise-in">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#8B6F47] mb-4 rise-in">
-            투스텝홀
-          </h1>
+          <div className="flex flex-col items-center mb-4 rise-in">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-symbol.png" alt="" className="h-20 md:h-28 w-auto mb-4" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-wordmark.png" alt="투스텝홀" className="h-7 md:h-9 w-auto" />
+          </div>
           <p className="text-lg md:text-xl text-[#B8956A] mb-2 rise-in-delay-1">
-            무용연습실 대관
+            무용연습실 투스텝홀
           </p>
-          <p className="text-sm md:text-base text-[#B8956A]/70 mb-10 rise-in-delay-2">
-            방배점 · 서초점
+          <p className="text-sm md:text-base text-gray-400 mb-10 rise-in-delay-2">
+            한 번을 연습해도 제대로
           </p>
           <button
             onClick={() => scrollTo('branches')}
-            className="rise-in-delay-3 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#8B6F47] text-white text-sm font-medium hover:bg-[#6B5535] transition-colors"
+            className="rise-in-delay-3 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E3CFB4] text-gray-900 text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
           >
             둘러보기
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -153,24 +160,22 @@ export default function HomePage() {
       </section>
 
       {/* 지점소개 */}
-      <Section id="branches" className="py-20 px-4 section-beige">
+      <Section id="branches" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <SectionTitle title="지점소개" subtitle="두 개의 공간, 하나의 투스텝홀" />
+          <SectionTitle title="지점소개" />
           <div className="grid md:grid-cols-2 gap-6">
-            {/* 방배점 */}
             <div className="glass-card p-8">
-              <h3 className="text-xl font-bold text-[#8B6F47] mb-4">방배점</h3>
-              <div className="h-48 bg-[#E3CFB4]/30 rounded-2xl flex items-center justify-center text-[#B8956A] text-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 tracking-tight">방배점</h3>
+              <div className="h-48 bg-[#E3CFB4]/20 rounded-2xl flex items-center justify-center text-gray-400 text-sm">
                 사진/내용 영역
               </div>
               <div className="mt-4 text-sm text-gray-600 space-y-1">
                 <p>내용이 들어갈 자리입니다</p>
               </div>
             </div>
-            {/* 서초점 */}
             <div className="glass-card p-8">
-              <h3 className="text-xl font-bold text-[#8B6F47] mb-4">서초점</h3>
-              <div className="h-48 bg-[#E3CFB4]/30 rounded-2xl flex items-center justify-center text-[#B8956A] text-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 tracking-tight">서초점</h3>
+              <div className="h-48 bg-[#E3CFB4]/20 rounded-2xl flex items-center justify-center text-gray-400 text-sm">
                 사진/내용 영역
               </div>
               <div className="mt-4 text-sm text-gray-600 space-y-1">
@@ -182,20 +187,20 @@ export default function HomePage() {
       </Section>
 
       {/* 위치안내 */}
-      <Section id="location" className="py-20 px-4 section-white">
+      <Section id="location" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <SectionTitle title="위치안내" subtitle="오시는 길" />
+          <SectionTitle title="위치안내" />
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass-card p-8">
-              <h3 className="text-lg font-bold text-[#8B6F47] mb-3">방배점</h3>
-              <div className="h-48 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-sm mb-4">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 tracking-tight">방배점</h3>
+              <div className="h-48 bg-[#E3CFB4]/10 rounded-2xl flex items-center justify-center text-gray-400 text-sm mb-4">
                 지도 영역
               </div>
               <p className="text-sm text-gray-600">주소가 들어갈 자리입니다</p>
             </div>
             <div className="glass-card p-8">
-              <h3 className="text-lg font-bold text-[#8B6F47] mb-3">서초점</h3>
-              <div className="h-48 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-sm mb-4">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 tracking-tight">서초점</h3>
+              <div className="h-48 bg-[#E3CFB4]/10 rounded-2xl flex items-center justify-center text-gray-400 text-sm mb-4">
                 지도 영역
               </div>
               <p className="text-sm text-gray-600">주소가 들어갈 자리입니다</p>
@@ -205,11 +210,11 @@ export default function HomePage() {
       </Section>
 
       {/* 가격안내 */}
-      <Section id="pricing" className="py-20 px-4 section-beige">
+      <Section id="pricing" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <SectionTitle title="가격안내" subtitle="합리적인 대관료" />
+          <SectionTitle title="가격안내" />
           <div className="glass-card p-8">
-            <div className="text-center text-sm text-gray-500 py-12">
+            <div className="text-center text-sm text-gray-400 py-12">
               가격표가 들어갈 자리입니다
             </div>
           </div>
@@ -217,11 +222,11 @@ export default function HomePage() {
       </Section>
 
       {/* 대관방법 */}
-      <Section id="how-to" className="py-20 px-4 section-white">
+      <Section id="how-to" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <SectionTitle title="대관방법" subtitle="간편한 예약 프로세스" />
+          <SectionTitle title="대관방법" />
           <div className="glass-card p-8">
-            <div className="text-center text-sm text-gray-500 py-12">
+            <div className="text-center text-sm text-gray-400 py-12">
               대관 방법 안내가 들어갈 자리입니다
             </div>
           </div>
@@ -229,12 +234,12 @@ export default function HomePage() {
       </Section>
 
       {/* 대관현황 */}
-      <Section id="status" className="py-20 px-4 section-beige">
+      <Section id="status" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <SectionTitle title="대관현황" subtitle="실시간 예약 현황을 확인하세요" />
+          <SectionTitle title="대관현황" />
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass-card p-6 overflow-hidden">
-              <h3 className="text-lg font-bold text-[#8B6F47] mb-4 text-center">방배점</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-4 text-center tracking-tight">방배점</h3>
               <iframe
                 src="https://twostephall-admin-fkcc.vercel.app/status?branch=bangbae"
                 className="w-full h-[500px] rounded-xl border-0"
@@ -242,7 +247,7 @@ export default function HomePage() {
               />
             </div>
             <div className="glass-card p-6 overflow-hidden">
-              <h3 className="text-lg font-bold text-[#8B6F47] mb-4 text-center">서초점</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-4 text-center tracking-tight">서초점</h3>
               <iframe
                 src="https://twostephall-admin-fkcc.vercel.app/status?branch=seocho"
                 className="w-full h-[500px] rounded-xl border-0"
@@ -254,11 +259,11 @@ export default function HomePage() {
       </Section>
 
       {/* 이용규정 */}
-      <Section id="rules" className="py-20 px-4 section-white">
+      <Section id="rules" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <SectionTitle title="이용규정" />
           <div className="glass-card p-8">
-            <div className="text-center text-sm text-gray-500 py-12">
+            <div className="text-center text-sm text-gray-400 py-12">
               이용규정 내용이 들어갈 자리입니다
             </div>
           </div>
@@ -266,11 +271,11 @@ export default function HomePage() {
       </Section>
 
       {/* 환불규정 */}
-      <Section id="refund" className="py-20 px-4 section-beige">
+      <Section id="refund" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <SectionTitle title="환불규정" />
           <div className="glass-card p-8">
-            <div className="text-center text-sm text-gray-500 py-12">
+            <div className="text-center text-sm text-gray-400 py-12">
               환불규정 내용이 들어갈 자리입니다
             </div>
           </div>
@@ -278,15 +283,15 @@ export default function HomePage() {
       </Section>
 
       {/* FAQ */}
-      <Section id="faq" className="py-20 px-4 section-white">
+      <Section id="faq" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <SectionTitle title="FAQ" subtitle="자주 묻는 질문" />
+          <SectionTitle title="FAQ" />
           <div className="space-y-3">
             {[1, 2, 3].map((i) => (
               <div key={i} className="glass-card p-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-[#8B6F47]">Q. 질문이 들어갈 자리입니다 {i}</span>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-[#B8956A]">
+                  <span className="text-sm font-medium text-gray-900">Q. 질문이 들어갈 자리입니다 {i}</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-gray-400">
                     <path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
@@ -297,8 +302,13 @@ export default function HomePage() {
       </Section>
 
       {/* 푸터 */}
-      <footer className="py-12 px-4 text-center border-t border-[#E3CFB4]/30">
-        <p className="text-[#8B6F47] font-bold mb-2">투스텝홀</p>
+      <footer className="py-12 px-4 text-center border-t border-white/40">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-symbol.png" alt="" className="h-6 w-auto" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-wordmark.png" alt="투스텝홀" className="h-3.5 w-auto" />
+        </div>
         <p className="text-xs text-gray-400">무용연습실 대관 | 방배점 · 서초점</p>
       </footer>
     </div>
