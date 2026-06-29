@@ -397,7 +397,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="https://twostephall-admin-fkcc.vercel.app/status?branch=bangbae"
+                href="https://status.twostephall.com/?branch=bangbae"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-[#E3CFB4] text-gray-900 text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
@@ -406,7 +406,7 @@ export default function HomePage() {
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
               <a
-                href="https://twostephall-admin-fkcc.vercel.app/status?branch=seocho"
+                href="https://status.twostephall.com/?branch=seocho"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-[#E3CFB4] text-gray-900 text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
@@ -546,7 +546,7 @@ export default function HomePage() {
 
       {/* 대관현황 플로팅 버튼 (좌측, 피어잇 실시간 공석현황 참고) */}
       <a
-        href="https://twostephall-admin-fkcc.vercel.app/status?branch=bangbae"
+        href="https://status.twostephall.com/?branch=bangbae"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="대관현황 보러가기"
