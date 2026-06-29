@@ -242,7 +242,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#03C75A] text-white text-xs font-bold shadow-sm hover:brightness-95 transition"
                 >
-                  네이버지도
+                  네이버 지도
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               </div>
@@ -265,7 +265,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#03C75A] text-white text-xs font-bold shadow-sm hover:brightness-95 transition"
                 >
-                  네이버지도
+                  네이버 지도
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               </div>
@@ -545,8 +545,10 @@ export default function HomePage() {
       </footer>
 
       {/* 대관현황 플로팅 버튼 (좌측, 피어잇 실시간 공석현황 참고) */}
-      <button
-        onClick={() => scrollTo('status')}
+      <a
+        href="https://twostephall-admin-fkcc.vercel.app/status?branch=bangbae"
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="대관현황 보러가기"
         className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-[#32322E]/[0.92] backdrop-blur-xl border border-white/10 shadow-lg hover:shadow-xl hover:bg-[#32322E] transition-all whitespace-nowrap"
       >
@@ -556,7 +558,7 @@ export default function HomePage() {
         </span>
         <span className="text-xs font-extrabold tracking-wide text-[#22c55e]">LIVE</span>
         <span className="text-base font-bold text-white">대관현황 보러가기</span>
-      </button>
+      </a>
 
       {/* 카카오톡 채널 플로팅 버튼 */}
       <a
