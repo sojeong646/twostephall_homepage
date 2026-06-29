@@ -66,7 +66,9 @@ function FaqItem({ q, children }: { q: string; children: React.ReactNode }) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-3 p-5 text-left"
       >
-        <span className="text-sm font-semibold text-gray-900">Q. {q}</span>
+        <span className="text-base md:text-lg font-bold text-gray-900">
+          <span className="text-[#B8956A]">Q.</span> {q}
+        </span>
         <svg
           width="20" height="20" viewBox="0 0 20 20" fill="none"
           className={`shrink-0 text-[#B8956A] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
@@ -134,9 +136,9 @@ export default function HomePage() {
             onClick={() => setNavOpen(!navOpen)}
             className="md:hidden w-8 h-8 flex flex-col justify-center items-center gap-1.5"
           >
-            <span className={`w-5 h-0.5 bg-[#8B6F47] transition-all ${navOpen ? 'rotate-45 translate-y-1' : ''}`} />
-            <span className={`w-5 h-0.5 bg-[#8B6F47] transition-all ${navOpen ? 'opacity-0' : ''}`} />
-            <span className={`w-5 h-0.5 bg-[#8B6F47] transition-all ${navOpen ? '-rotate-45 -translate-y-1' : ''}`} />
+            <span className="w-5 h-0.5 bg-[#8B6F47]" />
+            <span className="w-5 h-0.5 bg-[#8B6F47]" />
+            <span className="w-5 h-0.5 bg-[#8B6F47]" />
           </button>
         </div>
 
@@ -157,18 +159,18 @@ export default function HomePage() {
       </nav>
 
       {/* 히어로 섹션 */}
-      <section id="hero" className="min-h-screen flex items-start md:items-center justify-center px-4 pt-32 md:pt-0">
+      <section id="hero" className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center rise-in">
           <div className="flex flex-col items-center mb-4 rise-in">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-symbol.png" alt="" className="h-20 md:h-28 w-auto mb-4" />
+            <img src="/logo-symbol.png" alt="" className="h-28 md:h-36 w-auto mb-5" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-wordmark.png" alt="투스텝홀" className="h-7 md:h-9 w-auto" />
+            <img src="/logo-wordmark.png" alt="투스텝홀" className="h-9 md:h-12 w-auto" />
           </div>
-          <p className="text-lg md:text-xl text-[#B8956A] mb-2 rise-in-delay-1">
+          <p className="text-xl md:text-3xl font-semibold text-[#B8956A] mb-2 rise-in-delay-1">
             무용연습실 투스텝홀
           </p>
-          <p className="text-sm md:text-base text-gray-400 mb-10 rise-in-delay-2">
+          <p className="text-base md:text-lg text-gray-400 mb-10 rise-in-delay-2">
             한 번을 연습해도 제대로
           </p>
           <button
@@ -300,15 +302,15 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mt-6 glass-card p-6 space-y-2.5">
-            <p className="flex gap-2 text-sm text-gray-600">
+            <p className="flex gap-2 text-sm text-gray-600 break-keep md:break-normal">
               <span className="text-[#B8956A] font-bold">•</span>
               <span>기본 2시간 이상 예약 가능 <span className="text-gray-400">(단, 예약과 예약 사이 1시간은 가능)</span></span>
             </p>
-            <p className="flex gap-2 text-sm text-gray-600">
+            <p className="flex gap-2 text-sm text-gray-600 break-keep md:break-normal">
               <span className="text-[#B8956A] font-bold">•</span>
               <span>5인 초과 시 인당 · 시간당 <span className="font-semibold text-gray-800">2,000원</span> 추가</span>
             </p>
-            <p className="flex gap-2 text-sm text-gray-600">
+            <p className="flex gap-2 text-sm text-gray-600 break-keep md:break-normal">
               <span className="text-[#B8956A] font-bold">•</span>
               <span>장기대관, 상업용 촬영은 별도 문의</span>
             </p>
@@ -424,12 +426,12 @@ export default function HomePage() {
           <div className="max-w-2xl mx-auto space-y-3">
             <div className="rounded-3xl bg-red-50 border border-red-200 p-5 flex gap-3 shadow-sm">
               <span className="text-lg shrink-0">⚠️</span>
-              <p className="text-sm leading-relaxed text-gray-700">
+              <p className="text-sm leading-relaxed text-gray-700 break-keep md:break-normal">
                 홀 내 <strong className="font-semibold text-red-700">실외화 · 검정슈즈 · 송진가루 사용은 절대 금지</strong>입니다. 댄스플로어 손상 방지를 위한 조치이며, 위반 시 전문업체 기준으로 <strong className="font-semibold text-red-600">복구 비용 전액이 청구</strong>됩니다.
               </p>
             </div>
             <div className="glass-card p-6">
-              <ul className="space-y-3.5 text-sm leading-relaxed text-gray-700">
+              <ul className="space-y-3.5 text-sm leading-relaxed text-gray-700 break-keep md:break-normal">
                 <li className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 rounded-sm bg-[#B8956A] shrink-0" />그 외 물품 분실 및 파손 시 전액 배상 및 원상복구가 요구됩니다.</li>
                 <li className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 rounded-sm bg-[#B8956A] shrink-0" /><span>음료 외 음식물 반입은 금지됩니다. <span className="text-gray-400">(적발 시 즉시 퇴장)</span></span></li>
                 <li className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 rounded-sm bg-[#B8956A] shrink-0" /><span>퇴실 시 다음 이용자를 위해 반드시 정리정돈을 해주세요. <span className="text-gray-400">(에어컨 OFF · 조명 OFF · 원상복구)</span></span></li>
@@ -541,6 +543,33 @@ export default function HomePage() {
         </div>
         <p className="text-xs text-gray-400">무용연습실 대관 | 방배점 · 서초점</p>
       </footer>
+
+      {/* 대관현황 플로팅 버튼 (좌측, 피어잇 실시간 공석현황 참고) */}
+      <button
+        onClick={() => scrollTo('status')}
+        aria-label="대관현황 보러가기"
+        className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-[#32322E]/[0.92] backdrop-blur-xl border border-white/10 shadow-lg hover:shadow-xl hover:bg-[#32322E] transition-all whitespace-nowrap"
+      >
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75 animate-ping" />
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#22c55e]" />
+        </span>
+        <span className="text-xs font-extrabold tracking-wide text-[#22c55e]">LIVE</span>
+        <span className="text-base font-bold text-white">대관현황 보러가기</span>
+      </button>
+
+      {/* 카카오톡 채널 플로팅 버튼 */}
+      <a
+        href="https://pf.kakao.com/_xmTxgnK"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="카카오톡 채널 문의"
+        className="fixed bottom-5 right-5 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#FEE500] shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+      >
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#3C1E1E">
+          <path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/>
+        </svg>
+      </a>
     </div>
   );
 }
