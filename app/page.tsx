@@ -358,6 +358,15 @@ export default function HomePage() {
       <Section id="how-to" className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <SectionTitle title="대관방법" subtitle="이렇게 신청하세요" />
+          <div className="max-w-2xl mx-auto mb-6 rounded-3xl bg-red-50 border border-red-200 p-5 shadow-sm break-keep md:break-normal">
+            <p className="font-bold text-red-700 mb-2">📢 더 편리한 &lsquo;실시간 예약 시스템&rsquo;을 준비 중이에요!</p>
+            <div className="text-sm text-red-800 leading-relaxed space-y-2">
+              <p>안녕하세요, 투스텝홀입니다.</p>
+              <p>번거롭게 카카오톡 채널을 거치지 않고, 홈페이지에서 클릭 몇 번으로 즉시 예약할 수 있는 &lsquo;실시간 예약 시스템&rsquo;을 구축하고 있습니다.</p>
+              <p>현재 홈페이지에 반영된 시스템으로 직접 일정을 확인하고 신청하셔도 좋고, 기존처럼 카카오톡 채널로 문의해 주셔도 똑같이 예약이 완료됩니다. 편하신 방법으로 신청해 주세요!</p>
+              <p>시스템이 최종 완성되어 정식 오픈하게 되면 공지해 드리겠습니다. 감사합니다. 🙇‍♀️</p>
+            </div>
+          </div>
           <div className="max-w-2xl mx-auto space-y-4">
             <div className="glass-card p-6 flex gap-4 items-start">
               <div className="shrink-0 w-9 h-9 rounded-full bg-[#E3CFB4] text-[#6B5336] font-bold flex items-center justify-center text-sm">1</div>
