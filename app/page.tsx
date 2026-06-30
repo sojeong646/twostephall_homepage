@@ -534,14 +534,35 @@ export default function HomePage() {
       </Section>
 
       {/* 푸터 */}
-      <footer className="py-12 px-4 text-center border-t border-white/40">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-symbol.png" alt="" className="h-6 w-auto" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-wordmark.png" alt="투스텝홀" className="h-3.5 w-auto" />
+      <footer className="py-12 px-4 border-t border-white/40">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-symbol.png" alt="" className="h-6 w-auto" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-wordmark.png" alt="투스텝홀" className="h-3.5 w-auto" />
+          </div>
+          <p className="text-center text-xs text-gray-400 mb-7">무용연습실 대관 | 방배점 · 서초점</p>
+
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5 text-[11px] leading-relaxed text-gray-400 break-keep">
+            <div className="text-center">
+              <p className="font-semibold text-gray-500 mb-1">무용연습실 투스텝홀 방배점</p>
+              <p>대표 이영아</p>
+              <p>사업자등록번호 271-02-03016</p>
+              <p>서울특별시 서초구 효령로27길 41 지하1층</p>
+              <p>대표번호 010-2026-7018</p>
+            </div>
+            <div className="text-center">
+              <p className="font-semibold text-gray-500 mb-1">무용연습실 투스텝홀 서초점</p>
+              <p>대표 이영아</p>
+              <p>사업자등록번호 210-50-18723</p>
+              <p>서울특별시 서초구 서초중앙로12길 35 지하1층</p>
+              <p>대표번호 010-2026-7018</p>
+            </div>
+          </div>
+
+          <p className="text-center text-[10px] text-gray-300 mt-7">© 2026 무용연습실 투스텝홀. All rights reserved.</p>
         </div>
-        <p className="text-xs text-gray-400">무용연습실 대관 | 방배점 · 서초점</p>
       </footer>
 
       {/* 대관현황 플로팅 버튼 (좌측, 피어잇 실시간 공석현황 참고) */}
