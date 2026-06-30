@@ -32,7 +32,22 @@ function getSessionId(): string {
   }
 }
 
+// 운영자 본인 기기 제외 — '.twostephall.com' 쿠키(서브도메인 공유)
+function isNotrack(): boolean {
+  if (typeof document === 'undefined') return false;
+  return document.cookie.split('; ').includes('tsh_notrack=1');
+}
+
+function setNotrack(on: boolean): void {
+  if (typeof window === 'undefined') return;
+  const host = window.location.hostname;
+  const dom = host === 'twostephall.com' || host.endsWith('.twostephall.com') ? '; domain=.twostephall.com' : '';
+  const maxAge = on ? 60 * 60 * 24 * 3650 : 0;
+  document.cookie = `tsh_notrack=1; path=/; max-age=${maxAge}; samesite=lax${dom}`;
+}
+
 function send(payload: Record<string, unknown>, url: string): void {
+  if (isNotrack()) return; // 운영자 본인 기기는 집계 제외
   try {
     const body = JSON.stringify(payload);
     if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
@@ -55,6 +70,16 @@ export default function Analytics() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // ?notrack=1 링크로 이 기기를 통계에서 제외 (운영자 본인 기기용)
+    const nt = new URLSearchParams(window.location.search).get('notrack');
+    if (nt === '1') {
+      setNotrack(true);
+      alert('이 기기는 이제 투스텝홀 통계에서 제외돼요! 🙆');
+    } else if (nt === '0') {
+      setNotrack(false);
+      alert('이 기기의 통계 제외를 해제했어요.');
+    }
+
     const url = trackUrl();
     const viewId = newId();
     const sessionId = getSessionId();
