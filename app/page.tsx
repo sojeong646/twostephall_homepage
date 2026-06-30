@@ -175,7 +175,7 @@ export default function HomePage() {
           </p>
           <button
             onClick={() => scrollTo('branches')}
-            className="rise-in-delay-3 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E3CFB4] text-gray-900 text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
+            className="rise-in-delay-3 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-br from-[#EADBC4] to-[#D7BD96] text-gray-900 text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
           >
             둘러보기
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -235,14 +235,32 @@ export default function HomePage() {
                 </svg>
                 서울특별시 서초구 효령로27길 41 지하1층
               </p>
-              <div className="mt-3 text-center">
+              <div className="mt-3 flex flex-wrap justify-center gap-2">
                 <a
                   href="https://naver.me/GZZS7eVS"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#03C75A] text-white text-xs font-bold shadow-sm hover:brightness-95 transition"
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-gradient-to-br from-[#06CE63] to-[#02A24A] text-white text-xs font-bold shadow-sm hover:brightness-105 transition"
                 >
                   네이버 지도
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
+                <a
+                  href="https://kko.to/H1C4THn-W3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-gradient-to-br from-[#FFE94A] to-[#F4D200] text-[#3C1E1E] text-xs font-bold shadow-sm hover:brightness-105 transition"
+                >
+                  카카오맵
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
+                <a
+                  href="https://tmap.life/0f774d2f"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-gradient-to-br from-[#3385FF] to-[#0053DD] text-white text-xs font-bold shadow-sm hover:brightness-105 transition"
+                >
+                  T맵
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               </div>
@@ -258,14 +276,32 @@ export default function HomePage() {
                 </svg>
                 서울특별시 서초구 서초중앙로12길 35 지하1층
               </p>
-              <div className="mt-3 text-center">
+              <div className="mt-3 flex flex-wrap justify-center gap-2">
                 <a
                   href="https://naver.me/5KqdE3ql"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#03C75A] text-white text-xs font-bold shadow-sm hover:brightness-95 transition"
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-gradient-to-br from-[#06CE63] to-[#02A24A] text-white text-xs font-bold shadow-sm hover:brightness-105 transition"
                 >
                   네이버 지도
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
+                <a
+                  href="https://kko.to/9lwdmEgO0a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-gradient-to-br from-[#FFE94A] to-[#F4D200] text-[#3C1E1E] text-xs font-bold shadow-sm hover:brightness-105 transition"
+                >
+                  카카오맵
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
+                <a
+                  href="https://tmap.life/f1b6d759"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-gradient-to-br from-[#3385FF] to-[#0053DD] text-white text-xs font-bold shadow-sm hover:brightness-105 transition"
+                >
+                  T맵
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               </div>
@@ -329,7 +365,7 @@ export default function HomePage() {
                 <p className="font-semibold text-gray-900">실시간 예약현황 확인하기</p>
                 <button
                   onClick={() => scrollTo('status')}
-                  className="mt-3 inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#E3CFB4] text-gray-900 text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
+                  className="mt-3 inline-flex items-center gap-1 px-4 py-2 rounded-full bg-gradient-to-br from-[#F2A45C] to-[#E27A4F] text-white text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
                 >
                   대관현황 확인하기
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -341,23 +377,23 @@ export default function HomePage() {
               <div className="shrink-0 w-9 h-9 rounded-full bg-[#E3CFB4] text-[#6B5336] font-bold flex items-center justify-center text-sm">2</div>
               <div className="flex-1 pt-1.5">
                 <p className="font-semibold text-gray-900">아래에서 바로 대관 신청하기</p>
-                <div className="mt-3 flex flex-col sm:flex-row gap-3">
+                <div className="mt-3 flex flex-col sm:flex-row items-start gap-3">
                   <a
                     href="https://status.twostephall.com/booking?branch=bangbae"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1 px-4 py-2 rounded-full bg-[#E3CFB4] text-gray-900 text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
+                    className="inline-flex items-center justify-center gap-1 px-4 py-2 rounded-full bg-gradient-to-br from-[#F2A45C] to-[#E27A4F] text-white text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
                   >
-                    방배점 신청하기
+                    방배점 대관신청하기
                     <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </a>
                   <a
                     href="https://status.twostephall.com/booking?branch=seocho"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1 px-4 py-2 rounded-full bg-[#E3CFB4] text-gray-900 text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
+                    className="inline-flex items-center justify-center gap-1 px-4 py-2 rounded-full bg-gradient-to-br from-[#F2A45C] to-[#E27A4F] text-white text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
                   >
-                    서초점 신청하기
+                    서초점 대관신청하기
                     <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </a>
                 </div>
@@ -375,12 +411,26 @@ export default function HomePage() {
                 <p className="font-semibold text-gray-900">예약확정 및 캘린더 확인하기</p>
                 <button
                   onClick={() => scrollTo('status')}
-                  className="mt-3 inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#E3CFB4] text-gray-900 text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
+                  className="mt-3 inline-flex items-center gap-1 px-4 py-2 rounded-full bg-gradient-to-br from-[#F2A45C] to-[#E27A4F] text-white text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
                 >
                   대관현황 확인하기
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </button>
               </div>
+            </div>
+
+            {/* 문의 안내 — 단계 박스 밖 */}
+            <div className="text-center pt-2">
+              <p className="text-sm text-gray-600">문의사항이 있으시면 카카오톡 채널로 문의해주세요.</p>
+              <a
+                href="https://pf.kakao.com/_xmTxgnK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#FEE500] text-[#3C1E1E] text-xs font-bold hover:brightness-95 transition"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+                카카오톡 채널 바로가기
+              </a>
             </div>
           </div>
         </div>
@@ -401,7 +451,7 @@ export default function HomePage() {
                 href="https://status.twostephall.com/?branch=bangbae"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-[#E3CFB4] text-gray-900 text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
+                className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-gradient-to-br from-[#F2A45C] to-[#E27A4F] text-white text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
               >
                 방배점 대관현황
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -410,7 +460,7 @@ export default function HomePage() {
                 href="https://status.twostephall.com/?branch=seocho"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-[#E3CFB4] text-gray-900 text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
+                className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-gradient-to-br from-[#F2A45C] to-[#E27A4F] text-white text-sm font-bold shadow-md hover:shadow-lg transition-shadow"
               >
                 서초점 대관현황
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
