@@ -340,26 +340,27 @@ export default function HomePage() {
             <div className="glass-card p-6 flex gap-4 items-start">
               <div className="shrink-0 w-9 h-9 rounded-full bg-[#E3CFB4] text-[#6B5336] font-bold flex items-center justify-center text-sm">2</div>
               <div className="flex-1 pt-1.5">
-                <p className="font-semibold text-gray-900">아래 양식을 작성해 카카오톡 채널로 메시지 보내기</p>
-                <div className="mt-3 rounded-2xl bg-[#E3CFB4]/15 border border-[#E3CFB4]/40 p-4">
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2 text-sm text-gray-700">
-                    <li className="flex gap-2"><span className="text-[#B8956A]">·</span>이용지점 (서초점/방배점)</li>
-                    <li className="flex gap-2"><span className="text-[#B8956A]">·</span>이용 날짜 및 시간</li>
-                    <li className="flex gap-2"><span className="text-[#B8956A]">·</span>성함</li>
-                    <li className="flex gap-2"><span className="text-[#B8956A]">·</span>연락처</li>
-                    <li className="flex gap-2"><span className="text-[#B8956A]">·</span>인원</li>
-                    <li className="flex gap-2"><span className="text-[#B8956A]">·</span>연습 장르</li>
-                  </ul>
+                <p className="font-semibold text-gray-900">아래에서 바로 대관 신청하기</p>
+                <div className="mt-3 flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="https://status.twostephall.com/booking?branch=bangbae"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1 px-4 py-2 rounded-full bg-[#E3CFB4] text-gray-900 text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    방배점 신청하기
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </a>
+                  <a
+                    href="https://status.twostephall.com/booking?branch=seocho"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1 px-4 py-2 rounded-full bg-[#E3CFB4] text-gray-900 text-xs font-bold shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    서초점 신청하기
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </a>
                 </div>
-                <a
-                  href="https://pf.kakao.com/_xmTxgnK"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#FEE500] text-[#3C1E1E] text-xs font-bold hover:brightness-95 transition"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
-                  카카오톡 채널 바로가기
-                </a>
               </div>
             </div>
 
