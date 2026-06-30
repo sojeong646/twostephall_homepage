@@ -429,7 +429,8 @@ export default function HomePage() {
                 className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#FEE500] text-[#3C1E1E] text-xs font-bold hover:brightness-95 transition"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
-                카카오톡 채널 바로가기
+                카카오톡 채널
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
             </div>
           </div>
@@ -498,7 +499,8 @@ export default function HomePage() {
                       className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FEE500] text-[#3C1E1E] text-xs font-bold hover:brightness-95 transition"
                     >
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
-                      카카오톡 채널 바로가기
+                      카카오톡 채널
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     </a>
                   </span>
                 </li>
