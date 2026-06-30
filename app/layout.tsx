@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "투스텝홀 | 무용연습실 대관",
+  title: "무용연습실 투스텝홀 | 한 번을 연습해도 제대로",
   description: "방배점 · 서초점 | 무용연습실 투스텝홀",
 };
 
