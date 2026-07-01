@@ -86,12 +86,30 @@ function FaqItem({ q, children }: { q: string; children: React.ReactNode }) {
 export default function HomePage() {
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // 카카오 로그인 상태 (null=확인중, false=비로그인, {name}=로그인)
+  const [customer, setCustomer] = useState<{ loggedIn: boolean; name?: string } | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // 로그인 상태 확인 (예약 시스템과 쿠키 공유 .twostephall.com)
+  useEffect(() => {
+    fetch('https://status.twostephall.com/api/customer/me', { credentials: 'include' })
+      .then((r) => r.json())
+      .then((d) => setCustomer({ loggedIn: !!d.loggedIn, name: d.name }))
+      .catch(() => setCustomer({ loggedIn: false }));
+  }, []);
+
+  // 로그인 전엔 카카오 로그인(1초), 후엔 마이페이지로
+  const KAKAO_LOGIN_URL =
+    'https://kauth.kakao.com/oauth/authorize?client_id=c3c05933d9873b9bfd0301c75dd40a7f' +
+    '&redirect_uri=' +
+    encodeURIComponent('https://status.twostephall.com/api/auth/kakao/customer-callback') +
+    '&response_type=code';
+  const isLoggedIn = customer?.loggedIn === true;
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -118,28 +136,60 @@ export default function HomePage() {
             <img src="/logo-wordmark.png" alt="투스텝홀" className="h-4 w-auto" />
           </button>
 
-          {/* 데스크탑 메뉴 */}
-          <div className="hidden md:flex gap-6">
-            {SECTIONS.slice(1).map((s) => (
-              <button
-                key={s.id}
-                onClick={() => scrollTo(s.id)}
-                className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium"
-              >
-                {s.label}
-              </button>
-            ))}
-          </div>
+          {/* 우측: 메뉴 + 내 예약 + 햄버거 */}
+          <div className="flex items-center gap-3 md:gap-5">
+            {/* 데스크탑 메뉴 */}
+            <div className="hidden md:flex gap-6">
+              {SECTIONS.slice(1).map((s) => (
+                <button
+                  key={s.id}
+                  onClick={() => scrollTo(s.id)}
+                  className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium"
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
 
-          {/* 모바일 햄버거 */}
-          <button
-            onClick={() => setNavOpen(!navOpen)}
-            className="md:hidden w-8 h-8 flex flex-col justify-center items-center gap-1.5"
-          >
-            <span className="w-5 h-0.5 bg-[#8B6F47]" />
-            <span className="w-5 h-0.5 bg-[#8B6F47]" />
-            <span className="w-5 h-0.5 bg-[#8B6F47]" />
-          </button>
+            {/* 로그인 전: 카카오 로그인 / 로그인 후: 내 예약 (데스크탑·모바일 항상 표시) */}
+            {isLoggedIn ? (
+              <a
+                href="https://status.twostephall.com/mypage"
+                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-br from-[#F2A45C] to-[#E27A4F] px-3.5 md:px-4 py-2 text-xs md:text-sm font-bold text-white shadow-md hover:opacity-95 transition-opacity whitespace-nowrap"
+              >
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M8 8a3 3 0 100-6 3 3 0 000 6zM2.5 14c0-2.5 2.5-4 5.5-4s5.5 1.5 5.5 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                내 예약
+              </a>
+            ) : (
+              <a
+                href={KAKAO_LOGIN_URL}
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#FEE500] px-3.5 md:px-4 py-2 text-xs md:text-sm font-bold text-[#191919] shadow-md hover:bg-[#FDD835] transition-colors whitespace-nowrap"
+              >
+                <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 2C5.03 2 1 5.13 1 8.97c0 2.48 1.65 4.66 4.13 5.88-.18.64-.65 2.32-.74 2.68-.12.44.16.44.34.32.14-.09 2.2-1.5 3.1-2.1.38.05.77.08 1.17.08 4.97 0 9-3.13 9-6.97C19 5.13 14.97 2 10 2z" fill="#191919" />
+                </svg>
+                카카오 로그인
+              </a>
+            )}
+
+            {/* 모바일 햄버거 */}
+            <button
+              onClick={() => setNavOpen(!navOpen)}
+              className="md:hidden w-8 h-8 flex flex-col justify-center items-center gap-1.5"
+            >
+              <span className="w-5 h-0.5 bg-[#8B6F47]" />
+              <span className="w-5 h-0.5 bg-[#8B6F47]" />
+              <span className="w-5 h-0.5 bg-[#8B6F47]" />
+            </button>
+          </div>
         </div>
 
         {/* 모바일 드롭다운 */}
