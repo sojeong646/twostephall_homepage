@@ -104,11 +104,16 @@ export default function HomePage() {
   }, []);
 
   // 로그인 전엔 카카오 로그인(1초), 후엔 마이페이지로
+  // state에 현재 홈페이지 주소를 실어 로그인 후 내예약이 아니라 보던 페이지(홈)로 복귀시킴
+  const returnTo =
+    typeof window !== 'undefined' ? window.location.href : 'https://www.twostephall.com';
   const KAKAO_LOGIN_URL =
     'https://kauth.kakao.com/oauth/authorize?client_id=c3c05933d9873b9bfd0301c75dd40a7f' +
     '&redirect_uri=' +
     encodeURIComponent('https://status.twostephall.com/api/auth/kakao/customer-callback') +
-    '&response_type=code';
+    '&response_type=code' +
+    '&state=' +
+    encodeURIComponent(returnTo);
   const isLoggedIn = customer?.loggedIn === true;
 
   const scrollTo = (id: string) => {
